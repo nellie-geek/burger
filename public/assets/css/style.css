@@ -1,7 +1,8 @@
-li {
+ul li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  background: #faf6d7;
+  max-width: 250px;
 }
 
 .label {
@@ -11,9 +12,14 @@ li {
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.devourbtn {
+  float: right;
+  background: black;
+  color: white;
 }
