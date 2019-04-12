@@ -15,15 +15,15 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burgers", function(req, res) {
+router.post("/burgers", function(req, res) {
   burger.create(
     req.body.name, function(result) {
-    // Send back the ID of the new quote
+    // Send back the ID of the new 
     res.json({ id: result.insertId });
   });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   burger.update(condition, function(result) {

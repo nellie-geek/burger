@@ -36,7 +36,7 @@ var orm = {
     });
   },
   create: function(table, vals, cb) {
-    var queryString = "INSERT INTO " + table + "('burger_name') VALUES ?";
+    var queryString = "INSERT INTO " + table + " (burger_name) VALUES (?)";
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
