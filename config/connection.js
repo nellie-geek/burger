@@ -1,25 +1,20 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection("mysql://r313lxi9y4ek45xp:nmerzqyz9rbgoxfz@gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/mr9ippr1m29aiuce");
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else{
+  connection = mysql.createConnection({
+    host: "localhost",
+    port: 8889,
+    user: "root",
+    password: "root",
+    database: "burger_db"
+  });
+}
 
 // Make connection.
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+connection.connect();
 
 // Export connection for our ORM to use.
 module.exports = connection;
-
-
-// {
-//   host: "localhost",
-//   port: 8889,
-//   user: "root",
-//   password: "root",
-//   database: "burger_db"
-// }
